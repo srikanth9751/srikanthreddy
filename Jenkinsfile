@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('code pull') {
             steps {
                 git 'https://github.com/javaparser/javaparser-maven-sample.git'
             }
         }
-        stage ('quality') {
+        stage ('build') {
             steps {
-                sh 'echo "in deploy stage" '
+                mvn install
             }
         }
     }
