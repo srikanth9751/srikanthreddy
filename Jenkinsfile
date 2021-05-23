@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('build') {
             steps {
-                mvn install
+               sh' mvn install'
             }
         }
     }
