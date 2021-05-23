@@ -1,15 +1,10 @@
 pipeline {
-    agent any
-    stages {
-        stage('build') {
-            steps {
-                sh 'echo "in build stage"'
-            }
-        }
-        stage ('quality') {
-            steps {
-                sh 'echo "in deploy stage" '
-            }
-        }
-    }
-}
+	Agent any
+	stages { 
+	stage ('SCM pull') {
+	steps {
+	git 'https://github.com/javaparser/javaparser-maven-sample.git'
+	}
+	}
+	}
+	}
